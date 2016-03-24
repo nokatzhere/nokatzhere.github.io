@@ -20,7 +20,7 @@ a {
 }
 a:hover,
 a:focus {
-  color: #db522f;
+  color: #D53501;
   text-decoration: none;
 }
 h1,
@@ -34,7 +34,7 @@ h6 {
 /* Header
 / -------------------------------------------------- */
 .site-header {
-  background-image: url(../img/bg.jpg);
+  background-image: url(../img/bg2.jpg);
   background-repeat: no-repeat, repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -162,7 +162,7 @@ h6 {
   font-weight: 300;
   border: 1px solid rgba(0, 0, 0, 0.15);
   padding: 17px 50px;
-  background: #93cede;
+  background: #D53501;
   border-radius: 40px;
   -webkit-box-shadow: 0 0 2px rgba(255, 255, 255, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.7);
   box-shadow: 0 0 2px rgba(255, 255, 255, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.7);
