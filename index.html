@@ -50,7 +50,7 @@
                     <div class="col-sm-6">
                         <!--   -->
                       <!-- <p>Mobilize is the application that makes it easy for you to plan group activities.<p> -->
-                      <p>Mobilize simplifies coordinating your activities and helps determine:</p>
+                      <p>Mobilize simplifies coordinating your activities and tracks:</p>
                       <!--  Is determine the right word? -->
                       <!-- <p>Mobilize helps determine:</p> -->
                       <!--  Are these the top five questions? This is the key to success. Word this better-->
@@ -125,8 +125,8 @@
                     </div>
                     <div id="form-response" class="footer-form-wrapper alert">
                     </div>
-                    <input type="hidden" name="_subject" value="New subscription!" />
-                    <input type="hidden" name="_cc" value="nb.katzman@yahoo.com" />
+                    <!-- <input type="hidden" name="_subject" value="New subscription!" />
+                    <input type="hidden" name="_cc" value="nb.katzman@yahoo.com" /> -->
                 </form>
             </div>
 
@@ -183,7 +183,6 @@
             // alert(JSON.stringify(dataToSend))
 
             $.ajax({
-                // url: 'https://formspree.io/info@getmobilize.xyz',
                 url: 'http://nodejs-mobilize.rhcloud.com/contact',
                 // url: 'http://localhost:4080/contact',
                 method: 'POST',
