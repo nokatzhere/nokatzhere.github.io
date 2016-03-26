@@ -123,7 +123,7 @@
                     <div class="footer-form-wrapper">
                         <input class="footer-form-inner" type="email" name="_replyto" placeholder="Email" required />
                     </div>
-                    <div id="form-response" class="footer-form-wrapper">
+                    <div id="form-response" class="footer-form-wrapper alert">
                     </div>
                 </form>
             </div>
@@ -171,7 +171,7 @@
                 data: $(this).serialize(),
                 dataType: 'json',
                 beforeSend: function() {
-                    $('#form-response').html('Sending message…').removeClass('alert');
+                    $('#form-response').html('Sending message…').removeClass('alert-failure');
                 },
                 success: function(data) {
                     //clear all fields
@@ -179,7 +179,7 @@
                     $('#contact-form').trigger("reset");
                 },
                 error: function(err) {
-                    $('#form-response').html("Failed to subscribe").addClass('alert');
+                    $('#form-response').html("Failed to subscribe").addClass('alert-failure');
                 }
             });
         });
