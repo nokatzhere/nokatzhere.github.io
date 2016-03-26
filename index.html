@@ -116,7 +116,7 @@
           <div class="col-sm-12">
 
             <div class="notify-wrapper">
-                <form id="contact-form" action="https://formspree.io/info@getmobilize.xyz", method="POST">
+                <form id="contact-form">
                     <div class="notify-inner">
                         <input id="subscribe-btn" class="notify" type="submit" value="Subscribe for Updates"/>
                     </div>
@@ -165,17 +165,29 @@
     //     });
     //   });
     $(document).ready(function() {
-        $('#contact-form').submit(function(e) {
+        $( '#contact-form' ).submit(function(e) {
             e.preventDefault();
+
+            // alert($(this).serializeArray());
             var formEmail = $('#form-email').val().trim();
+            var formArr = $(this).serializeArray();
             if (!/^.+@.+\..+$/.test(formEmail)) {
                 $('#form-response').html("Please enter a valid email").addClass('alert-failure');
                 return;
             }
+
+            var dataToSend = {};
+            for (var i in formArr) {
+                dataToSend[formArr[i].name] = formArr[i].value;
+            }
+            // alert(JSON.stringify(dataToSend))
+
             $.ajax({
-                url: 'http://formspree.io/info@getmobilize.xyz',
+                // url: 'https://formspree.io/info@getmobilize.xyz',
+                url: 'http://nodejs-mobilize.rhcloud.com/contact',
+                // url: 'http://localhost:4080/contact',
                 method: 'POST',
-                data: $(this).serialize(),
+                data: dataToSend,
                 dataType: 'json',
                 beforeSend: function() {
                     $('#form-response').html('Sending message…').removeClass('alert-failure');
