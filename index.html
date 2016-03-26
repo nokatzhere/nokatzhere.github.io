@@ -116,14 +116,19 @@
           <div class="col-sm-12">
 
             <div class="notify-wrapper">
-              <div class="notify-inner">
-                <a class="btn notify" href="#">Coming Soon!</a>
-              </div>
+                <form action="https://formspree.io/nb.katzman@yahoo.com", method="POST">
+                    <div class="notify-inner">
+                        <input class="notify" type="submit" value="Subscribe for Updates!"/>
+                    </div>
+                    <div class="footer-form-wrapper">
+                        <input class="footer-form-inner" type="email" name="_replyto" placeholder="Email" required />
+                    </div>
+                </form>
             </div>
 
             <div class="footer-notes">
-              <p class="text-center ">Created by a group of friends, for groups of friends</p>
-              <p class="text-center "><a href="#">Mobilize:</a> Do Things Together.</p>
+                <p class="text-center ">Created by a group of friends, for groups of friends</p>
+                <p class="text-center "><a href="#">Mobilize:</a> Do Things Together.</p>
             </div>
 
           </div>
@@ -137,6 +142,25 @@
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script>
+    //  $(document).ready(function() {
+    //     $('#contact-form').submit(function(){
+    //         // $('#contact-form-data :input').each(function () {
+    //             // alert($(this).name);
+    //         // })
+    //         // var user_email
+    //         alert($('user_email').val())
+    //         $('send_email').val($('user_email').val())
+     //
+    //         // alert(JSON.stringify($('#contact-form-data :input')));
+    //         // $('#contact-form button').html('Sending...')
+    //         // $.post('mail', $(this).serialize(), function(data) {
+    //         //   $('#contact-form').html(data);
+    //         //   $('#contact-form input, #contact-form textarea').val('');
+    //         // });
+    //         return true;
+    //     });
+    //   });
+
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
