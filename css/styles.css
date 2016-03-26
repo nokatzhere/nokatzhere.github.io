@@ -182,13 +182,13 @@ h6 {
     padding: 0 15%;
     right: 50%;
 }
+.alert {
+    color: red;
+    font-weight: bold;
+}
 .footer-form-inner {
     position: relative;
-    /*padding: 17px 50px;*/
     width: 100%;
-    /*left: 50%;*/
-    /*left: 15%;*/
-    /*background: #ffffff;*/
 }
 .footer-notes {
   padding: 150px 30% 100px;

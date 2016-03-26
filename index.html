@@ -116,12 +116,14 @@
           <div class="col-sm-12">
 
             <div class="notify-wrapper">
-                <form action="https://formspree.io/info@getmobilize.xyz", method="POST">
+                <form id="contact-form" action="https://formspree.io/info@getmobilize.xyz", method="POST">
                     <div class="notify-inner">
-                        <input class="notify" type="submit" value="Subscribe for Updates!"/>
+                        <input id="subscribe-btn" class="notify" type="submit" value="Subscribe for Updates!"/>
                     </div>
                     <div class="footer-form-wrapper">
                         <input class="footer-form-inner" type="email" name="_replyto" placeholder="Email" required />
+                    </div>
+                    <div id="form-response" class="footer-form-wrapper">
                     </div>
                 </form>
             </div>
@@ -160,7 +162,28 @@
     //         return true;
     //     });
     //   });
-
+    $(document).ready(function() {
+        $('#contact-form').submit(function(e) {
+            e.preventDefault();
+            $.ajax({
+                url: 'http://formspree.io/info@getmobilize.xyz',
+                method: 'POST',
+                data: $(this).serialize(),
+                dataType: 'json',
+                beforeSend: function() {
+                    $('#form-response').html('Sending message…').removeClass('alert');
+                },
+                success: function(data) {
+                    //clear all fields
+                    $('#form-response').html("Subscribed!");
+                    $('#contact-form').trigger("reset");
+                },
+                error: function(err) {
+                    $('#form-response').html("Failed to subscribe").addClass('alert');
+                }
+            });
+        });
+    });
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
