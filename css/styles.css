@@ -186,7 +186,7 @@ h6 {
     font-weight: bold;
 }
 .alert-failure {
-    color: red;
+    color: #D53501;
 }
 .footer-form-inner {
     position: relative;

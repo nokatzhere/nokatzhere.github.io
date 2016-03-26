@@ -121,7 +121,7 @@
                         <input id="subscribe-btn" class="notify" type="submit" value="Subscribe for Updates"/>
                     </div>
                     <div class="footer-form-wrapper">
-                        <input class="footer-form-inner" type="email" name="_replyto" placeholder="Email" required />
+                        <input class="footer-form-inner" id="form-email" type="email" name="_replyto" placeholder="Email" required />
                     </div>
                     <div id="form-response" class="footer-form-wrapper alert">
                     </div>
@@ -167,6 +167,11 @@
     $(document).ready(function() {
         $('#contact-form').submit(function(e) {
             e.preventDefault();
+            var formEmail = $('#form-email').val().trim();
+            if (!/^.+@.+\..+$/.test(formEmail)) {
+                $('#form-response').html("Please enter a valid email").addClass('alert-failure');
+                return;
+            }
             $.ajax({
                 url: 'http://formspree.io/info@getmobilize.xyz',
                 method: 'POST',
@@ -177,11 +182,11 @@
                 },
                 success: function(data) {
                     //clear all fields
-                    $('#form-response').html("Thanks for subscribing!");
+                    $('#form-response').html("Thanks for subscribing " + formEmail + "!");
                     $('#contact-form').trigger("reset");
                 },
                 error: function(err) {
-                    $('#form-response').html("Failed to subscribe").addClass('alert-failure');
+                    $('#form-response').html("Failed to send. <a href='mailto:info@getmobilize.com'>Contact Directly!</a>").addClass('alert-failure');
                 }
             });
         });
